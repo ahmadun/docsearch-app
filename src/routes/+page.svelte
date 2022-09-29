@@ -15,9 +15,7 @@
 
 
         try {
-            const res = await axios.get(`https://earsip-sveltekit-e5qk1zuoe-mashanz.vercel.app/api/klasifikasi`, {
-		
-            });
+            const res = await axios.get(`https://earsip-sveltekit-e5qk1zuoe-mashanz.vercel.app/api/klasifikasi`);
             console.log(res.data);
         } catch (e) {
 			console.log(e)
