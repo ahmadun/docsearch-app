@@ -1,0 +1,48 @@
+<script>
+	import axios from 'axios';
+
+	import { onMount } from 'svelte';
+
+	let docList = [];
+
+	onMount(async () => {
+
+
+  
+	});
+
+    async function handleSubmit(){
+
+
+        try {
+            const res = await axios.get(`https://earsip-sveltekit-e5qk1zuoe-mashanz.vercel.app/api/klasifikasi`, {
+				headers: { 
+					"Content-Type": "application/json",
+					"Access-Control-Allow-Origin":"*",
+          			"Access-Control-Allow-Methods":"GET,OPTIONS,PATCH,DELETE,POST,PUT" ,
+          			"Access-Control-Allow-Headers":"X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version" 
+				 }
+            });
+            console.log(res.data);
+        } catch (e) {
+			console.log(e)
+            
+        }
+	
+		
+
+    }
+</script>
+
+<div class="container mx-auto">
+	<div class="flex flex-col">
+		<div>Enter Search</div>
+		<div class="bg-green-600 border-dashed ">
+			<form on:submit|preventDefault={handleSubmit}>
+				<input type="text" class="form-input w-full" />
+			</form>
+		</div>
+		<div>02</div>
+		<div>03</div>
+	</div>
+</div>
